@@ -18,7 +18,7 @@ resource "azurerm_resource_group" "blob_storage" {
   location = "eastasia"
 }
 resource "azurerm_storage_account" "blobstorageacc" {
-  name                     = "blobstoraccount"
+  name                     = "blobstoraccountazure"
   resource_group_name      = azurerm_resource_group.blob_storage.name
   location                 = azurerm_resource_group.blob_storage.location
   account_tier             = "Standard"
