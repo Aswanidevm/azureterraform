@@ -18,7 +18,7 @@ resource "azurerm_resource_group" "blob_storage" {
   location = "eastasia"
 }
 resource "azurerm_storage_account" "blobstorageacc" {
-  name                     = "blob_storaccount"
+  name                     = "blobstoraccount"
   resource_group_name      = azurerm_resource_group.blob_storage.name
   location                 = azurerm_resource_group.blob_storage.location
   account_tier             = "Standard"
@@ -31,7 +31,7 @@ resource "azurerm_storage_account" "blobstorageacc" {
 
 resource "azurerm_storage_container" "blob_storage_cointainer" {
   name                  = "blob_storage_coint"
-  storage_account_name  = azurerm_storage_account.blob_storage_acc.name
+  storage_account_name  = azurerm_storage_account.blobstorageacc.name
   container_access_type = "private"
 }
 
