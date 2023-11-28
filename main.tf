@@ -15,7 +15,7 @@ provider "azurerm" {
 # Create a resource group
 resource "azurerm_resource_group" "blob_storage" {
   name     = "blob_storage-resources"
-  location = "jioindiacentral"
+  location = "eastasia"
 }
 
 # Create a virtual network within the resource group
