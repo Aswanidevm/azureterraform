@@ -17,6 +17,23 @@ resource "azurerm_resource_group" "blob_storage" {
   name     = "blob_storage-resources"
   location = "eastasia"
 }
+resource "azurerm_storage_account" "blob_storage_acc" {
+  name                     = "blob_storaccount"
+  resource_group_name      = azurerm_resource_group.blob_storage.name
+  location                 = azurerm_resource_group.blob_storage.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+
+  tags = {
+    environment = "staging"
+  }
+}
+
+resource "azurerm_storage_container" "blob_storage_cointainer" {
+  name                  = "blob_storage_coint"
+  storage_account_name  = azurerm_storage_account.blob_storage_acc.name
+  container_access_type = "private"
+}
 
 # Create a virtual network within the resource group
 resource "azurerm_virtual_network" "Vnet" {
