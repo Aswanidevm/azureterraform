@@ -30,7 +30,7 @@ resource "azurerm_storage_account" "blobstorageacc" {
 }
 
 resource "azurerm_storage_container" "blob_storage_cointainer" {
-  name                  = "blob_storage_coint"
+  name                  = "blobstoragecoint"
   storage_account_name  = azurerm_storage_account.blobstorageacc.name
   container_access_type = "private"
 }
